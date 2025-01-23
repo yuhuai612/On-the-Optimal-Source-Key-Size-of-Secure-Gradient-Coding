@@ -1,0 +1,1141 @@
+@InProceedings{pmlr-v70-tandon17a,
+  title = 	 {Gradient Coding: Avoiding Stragglers in Distributed Learning},
+  author =       {Rashish Tandon and Qi Lei and Alexandros G. Dimakis and Nikos Karampatziakis},
+  booktitle = 	 {Proceedings of the 34th International Conference on Machine Learning},
+  pages = 	 {3368--3376},
+  year = 	 {2017},
+  editor = 	 {Precup, Doina and Teh, Yee Whye},
+  volume = 	 {70},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {06--11 Aug},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v70/tandon17a/tandon17a.pdf},
+  url = 	 {https://proceedings.mlr.press/v70/tandon17a.html},
+  abstract = 	 {We propose a novel coding theoretic framework for mitigating stragglers in distributed learning. We show how carefully replicating data blocks and coding across gradients can provide tolerance to failures and stragglers for synchronous Gradient Descent. We implement our schemes in python (using MPI) to run on Amazon EC2, and show how we compare against baseline approaches in running time and generalization error.}
+}
+
+@inproceedings{bonawitz2017practical,
+  title={Practical secure aggregation for privacy-preserving machine learning},
+  author={Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+  booktitle={proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={1175--1191},
+  year={2017}
+}
+
+@inproceedings{Bonawitz_Secure_Aggregation,
+author = {Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H. Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+title = {Practical Secure Aggregation for Privacy-Preserving Machine Learning},
+year = {2017},
+isbn = {9781450349468},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3133956.3133982},
+doi = {10.1145/3133956.3133982},
+abstract = {We design a novel, communication-efficient, failure-robust protocol for secure aggregation of high-dimensional data. Our protocol allows a server to compute the sum of large, user-held data vectors from mobile devices in a secure manner (i.e. without learning each user's individual contribution), and can be used, for example, in a federated learning setting, to aggregate user-provided model updates for a deep neural network. We prove the security of our protocol in the honest-but-curious and active adversary settings, and show that security is maintained even if an arbitrarily chosen subset of users drop out at any time. We evaluate the efficiency of our protocol and show, by complexity analysis and a concrete implementation, that its runtime and communication overhead remain low even on large data sets and client pools. For 16-bit input values, our protocol offers $1.73 x communication expansion for 210 users and 220-dimensional vectors, and 1.98 x expansion for 214 users and 224-dimensional vectors over sending data in the clear.},
+booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {1175–1191},
+numpages = {17},
+keywords = {federated learning, machine learning, privacy-preserving protocols, secure aggregation},
+location = {Dallas, Texas, USA},
+series = {CCS '17}
+}
+
+
+@inproceedings{Lightsecagg,
+ author = {So, Jinhyun and He, Chaoyang and Yang, Chien-Sheng and Li, Songze and Yu, Qian and E. Ali, Ramy and Guler, Basak and Avestimehr, Salman},
+ booktitle = {Proceedings of Machine Learning and Systems},
+ editor = {D. Marculescu and Y. Chi and C. Wu},
+ pages = {694--720},
+ title = {LightSecAgg: a Lightweight and Versatile Design for Secure Aggregation in Federated Learning},
+ url = {https://proceedings.mlsys.org/paper_files/paper/2022/file/6c44dc73014d66ba49b28d483a8f8b0d-Paper.pdf},
+ volume = {4},
+ year = {2022}
+}
+
+
+@inproceedings{ChaumMultiparty1988,
+author = {Chaum, David and Cr\'{e}peau, Claude and Damgard, Ivan},
+title = {Multiparty unconditionally secure protocols},
+year = {1988},
+isbn = {0897912640},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/62212.62214},
+doi = {10.1145/62212.62214},
+abstract = {Under the assumption that each pair of participants can communicate secretly, we show that any reasonable multiparty protocol can be achieved if at least 2n/3 of the participants are honest. The secrecy achieved is unconditional. It does not rely on any assumption about computational intractability.},
+booktitle = {Proceedings of the Twentieth Annual ACM Symposium on Theory of Computing},
+pages = {11–19},
+numpages = {9},
+location = {Chicago, Illinois, USA},
+series = {STOC '88}
+}
+
+@article{yue2016healthcare,
+  title={Healthcare data gateways: found healthcare intelligence on blockchain with novel privacy risk control},
+  author={Yue, Xiao and Wang, Huiju and Jin, Dawei and Li, Mingqiang and Jiang, Wei},
+  journal={Journal of medical systems},
+  volume={40},
+  pages={1--8},
+  year={2016},
+  publisher={Springer}
+}
+
+@inproceedings{pedersen1991non,
+  title={Non-interactive and information-theoretic secure verifiable secret sharing},
+  author={Pedersen, Torben Pryds},
+  booktitle={Annual international cryptology conference},
+  pages={129--140},
+  year={1991},
+  organization={Springer}
+}
+
+@inproceedings{jahani2022swiftagg,
+  title={Swiftagg: Communication-efficient and dropout-resistant secure aggregation for federated learning with worst-case security guarantees},
+  author={Jahani-Nezhad, Tayyebeh and Maddah-Ali, Mohammad Ali and Li, Songze and Caire, Giuseppe},
+  booktitle={2022 IEEE International Symposium on Information Theory (ISIT)},
+  pages={103--108},
+  year={2022},
+  organization={IEEE}
+}
+
+@article{choi2020communication,
+  title={Communication-computation efficient secure aggregation for federated learning},
+  author={Choi, Beongjun and Sohn, Jy-yong and Han, Dong-Jun and Moon, Jaekyun},
+  journal={arXiv preprint arXiv:2012.05433},
+  year={2020}
+}
+
+@article{yang2021lightsecagg,
+  title={Lightsecagg: Rethinking secure aggregation in federated learning},
+  author={Yang, Chien-Sheng and So, Jinhyun and He, Chaoyang and Li, Songze and Yu, Qian and Avestimehr, Salman},
+  journal={arXiv preprint arXiv:2109.14236},
+  year={2021}
+}
+
+@inproceedings{zaharia2008improving,
+  title={Improving MapReduce performance in heterogeneous environments.},
+  author={Zaharia, Matei and Konwinski, Andy and Joseph, Anthony D and Katz, Randy H and Stoica, Ion},
+  booktitle={Osdi},
+  volume={8},
+  number={4},
+  pages={7},
+  year={2008}
+}
+
+@article{zhao2022information,
+  title={Information theoretic secure aggregation with user dropouts},
+  author={Zhao, Yizhou and Sun, Hua},
+  journal={IEEE Transactions on Information Theory},
+  volume={68},
+  number={11},
+  pages={7471--7484},
+  year={2022},
+  publisher={IEEE}
+}
+
+@InProceedings{Yu_2021_ICCV,
+    author    = {Yu, Alex and Li, Ruilong and Tancik, Matthew and Li, Hao and Ng, Ren and Kanazawa, Angjoo},
+    title     = {PlenOctrees for Real-Time Rendering of Neural Radiance Fields},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {5752-5761}
+}
+
+@inproceedings{cong2014minimizing,
+  title={Minimizing computation in convolutional neural networks},
+  author={Cong, Jason and Xiao, Bingjun},
+  booktitle={International conference on artificial neural networks},
+  pages={281--290},
+  year={2014},
+  organization={Springer}
+}
+
+@ARTICLE{Separable_Functions,
+  author={Mosk-Aoyama, Damon and Shah, Devavrat},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Fast Distributed Algorithms for Computing Separable Functions}, 
+  year={2008},
+  volume={54},
+  number={7},
+  pages={2997-3007},
+  doi={10.1109/TIT.2008.924648}}
+
+@article{PIR2017Sun,
+  author        = "Hua Sun  and Syed Ali Jafar",
+  title         = "The Capacity of Private Information Retrieval",
+  journal       = "IEEE Trans. Inf. Theory",
+  volume        = "63",
+  number        = "7",
+  year          = "2017",
+  pages         = "4075-4088"
+}
+@article{jia2019matrixCSA,
+  author        = "Zhuqing Jia and Syed A. Jafar",
+  title         = "Cross Subspace Alignment Codes for Coded Distributed Batch Computation",
+  journal       = "IEEE Trans. Infor. Theory",
+  year={2021},
+  volume={67},
+  number={5},
+  pages={2821-2846}
+}
+
+@ARTICLE{jia2019csa,
+  author={Jia, Zhuqing and Sun, Hua and Jafar, Syed Ali},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Cross Subspace Alignment and the Asymptotic Capacity of  $X$ -Secure  $T$ -Private Information Retrieval}, 
+  year={2019},
+  volume={65},
+  number={9},
+  pages={5783-5798}}
+  
+  @ARTICLE{kakar2019distributedsecure,
+  author={Kakar, Jaber and Ebadifar, Seyedhamed and Sezgin, Aydin},
+  journal={IEEE Access}, 
+  title={On the Capacity and Straggler-Robustness of Distributed Secure Matrix Multiplication}, 
+  year={2019},
+  volume={7},
+  number={},
+  pages={45783-45799}}
+  
+  @ARTICLE{jia2019securedistributed,
+  author={Jia, Zhuqing and Jafar, Syed Ali},
+  journal={IEEE Transactions on Information Theory}, 
+  title={On the Capacity of Secure Distributed Batch Matrix Multiplication}, 
+  year={2021},
+  volume={67},
+  number={11},
+  pages={7420-7437}}
+
+@inproceedings{ananthanarayanan2010reining,
+  title={Reining in the outliers in map-reduce clusters using mantri.},
+  author={Ananthanarayanan, Ganesh and Kandula, Srikanth and Greenberg, Albert G and Stoica, Ion and Lu, Yi and Saha, Bikas and Harris, Edward},
+  booktitle={Osdi},
+  volume={10},
+  number={1},
+  pages={24},
+  year={2010}
+}
+
+@inbook{Completeness,
+author = {Ben-Or, Michael and Goldwasser, Shafi and Wigderson, Avi},
+title = {Completeness theorems for non-cryptographic fault-tolerant distributed computation},
+year = {2019},
+isbn = {9781450372664},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3335741.3335756},
+booktitle = {Providing Sound Foundations for Cryptography: On the Work of Shafi Goldwasser and Silvio Micali},
+pages = {351–371},
+numpages = {21}
+}
+
+@inproceedings{Multiparty,
+author = {Chaum, David and Cr\'{e}peau, Claude and Damgard, Ivan},
+title = {Multiparty unconditionally secure protocols},
+year = {1988},
+isbn = {0897912640},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/62212.62214},
+doi = {10.1145/62212.62214},
+abstract = {Under the assumption that each pair of participants can communicate secretly, we show that any reasonable multiparty protocol can be achieved if at least 2n/3 of the participants are honest. The secrecy achieved is unconditional. It does not rely on any assumption about computational intractability.},
+booktitle = {Proceedings of the Twentieth Annual ACM Symposium on Theory of Computing},
+pages = {11–19},
+numpages = {9},
+location = {Chicago, Illinois, USA},
+series = {STOC '88}
+}
+
+@inproceedings{10.1145/3133956.3133982,
+author = {Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H. Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+title = {Practical Secure Aggregation for Privacy-Preserving Machine Learning},
+year = {2017},
+isbn = {9781450349468},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3133956.3133982},
+doi = {10.1145/3133956.3133982},
+abstract = {We design a novel, communication-efficient, failure-robust protocol for secure aggregation of high-dimensional data. Our protocol allows a server to compute the sum of large, user-held data vectors from mobile devices in a secure manner (i.e. without learning each user's individual contribution), and can be used, for example, in a federated learning setting, to aggregate user-provided model updates for a deep neural network. We prove the security of our protocol in the honest-but-curious and active adversary settings, and show that security is maintained even if an arbitrarily chosen subset of users drop out at any time. We evaluate the efficiency of our protocol and show, by complexity analysis and a concrete implementation, that its runtime and communication overhead remain low even on large data sets and client pools. For 16-bit input values, our protocol offers $1.73 x communication expansion for 210 users and 220-dimensional vectors, and 1.98 x expansion for 214 users and 224-dimensional vectors over sending data in the clear.},
+booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {1175–1191},
+numpages = {17},
+keywords = {federated learning, machine learning, privacy-preserving protocols, secure aggregation},
+location = {Dallas, Texas, USA},
+series = {CCS '17}
+}
+
+@INPROCEEDINGS{limit,
+  author={Huang, Wenbo and Wan, Kai and Sun, Hua and Ji, Mingyue and Qiu, Robert Caiming and Caire, Giuseppe},
+  booktitle={2023 IEEE International Symposium on Information Theory (ISIT)}, 
+  title={Fundamental Limits of Distributed Linearly Separable Computation under Cyclic Assignment}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={2296-2301},
+  keywords={Costs;Distributed databases;Interference;Transformers;Rendering (computer graphics);Real-time systems;Encoding;Coded distributed computing;linearly separable function;cyclic assignment;interference alignment},
+  doi={10.1109/ISIT54713.2023.10206661}}
+
+@book{stinson2004combinatorial,
+  title={Combinatorial designs: constructions and analysis},
+  author={Stinson, Douglas Robert},
+  volume={480},
+  year={2004},
+  publisher={Springer}
+}
+
+@ARTICLE{tradeoff,  author={Wan, Kai and Sun, Hua and Ji, Mingyue and Caire, Giuseppe},  journal={IEEE Transactions on Communications},   title={On the Tradeoff Between Computation and Communication Costs for Distributed Linearly Separable Computation},   year={2021},  volume={69},  number={11},  pages={7390-7405},  doi={10.1109/TCOMM.2021.3107432}}
+
+@article{Straggler_1,
+  title={The tail at scale},
+  author={Dean, Jeffrey and Barroso, Luiz Andr{\'e}},
+  journal={Communications of the ACM},
+  volume={56},
+  number={2},
+  pages={74--80},
+  year={2013},
+  publisher={ACM New York, NY, USA}
+}
+ @article{replicationcode2020,
+  author        = "Amir Behrouzi-Far and Emina Soljanin",
+  title         = "Efficient Replication for Straggler Mitigation in Distributed Computing",
+  journal       = "available at arXiv:2006.02318",
+   year          = "Jun. 2020"
+}
+@article{dally2015high,
+  title={High-performance hardware for machine learning},
+  author={Dally, William},
+  journal={Nips Tutorial},
+  volume={2},
+  pages={3},
+  year={2015}
+}
+
+@article{Straggler_2,
+  author={Dutta, Sanghamitra and Fahim, Mohammad and Haddadpour, Farzin and Jeong, Haewon and Cadambe, Viveck and Grover, Pulkit},
+  journal={IEEE Transactions on Information Theory}, 
+  title={On the Optimal Recovery Threshold of Coded Matrix Multiplication}, 
+  year={2020},
+  volume={66},
+  number={1},
+  pages={278-301},
+  doi={10.1109/TIT.2019.2929328}}
+
+@inproceedings{Communication_cost_1,
+ author = {Li, Mu and Andersen, David G and Smola, Alexander J and Yu, Kai},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {Z. Ghahramani and M. Welling and C. Cortes and N. Lawrence and K.Q. Weinberger},
+ pages = {},
+ publisher = {Curran Associates, Inc.},
+ title = {Communication Efficient Distributed Machine Learning with the Parameter Server},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2014/file/1ff1de774005f8da13f42943881c655f-Paper.pdf},
+ volume = {27},
+ year = {2014}
+}
+@inproceedings{Communication_cost_2,
+  title={Scaling distributed machine learning with the parameter server},
+  author={Li, Mu and Andersen, David G and Park, Jun Woo and Smola, Alexander J and Ahmed, Amr and Josifovski, Vanja and Long, James and Shekita, Eugene J and Su, Bor-Yiing},
+  booktitle={11th $\{$USENIX$\}$ Symposium on Operating Systems Design and Implementation ($\{$OSDI$\}$ 14)},
+  pages={583--598},
+  year={2014}
+}
+
+@inproceedings{ye2018communication,
+  title={Communication-computation efficient gradient coding},
+  author={Ye, Min and Abbe, Emmanuel},
+  booktitle={International Conference on Machine Learning},
+  pages={5610--5619},
+  year={2018},
+  organization={PMLR}
+}
+
+@article{approximate_gradient_coding,
+  title={Fundamental limits of approximate gradient coding},
+  author={Wang, Sinong and Liu, Jiashang and Shroff, Ness},
+  journal={Proceedings of the ACM on Measurement and Analysis of Computing Systems},
+  volume={3},
+  number={3},
+  pages={1--22},
+  year={2019},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{Schwartz,
+  title={Fast probabilistic algorithms for verification of polynomial identities},
+  author={Schwartz, Jacob T},
+  journal={Journal of the ACM (JACM)},
+  volume={27},
+  number={4},
+  pages={701--717},
+  year={1980},
+  publisher={ACM}
+} 
+
+
+@article{anderson1984sequential,
+  title={Sequential coding algorithms: A survey and cost analysis},
+  author={Anderson, J and Mohan, Seshadri},
+  journal={IEEE Transactions on communications},
+  volume={32},
+  number={2},
+  pages={169--176},
+  year={1984},
+  publisher={IEEE}
+}
+@article{chowdhury2011managing,
+  title={Managing data transfers in computer clusters with orchestra},
+  author={Chowdhury, Mosharaf and Zaharia, Matei and Ma, Justin and Jordan, Michael I and Stoica, Ion},
+  journal={ACM SIGCOMM computer communication review},
+  volume={41},
+  number={4},
+  pages={98--109},
+  year={2011},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{zhang2013performance,
+  title={Performance modeling of mapreduce jobs in heterogeneous cloud environments},
+  author={Zhang, Zhuoyao and Cherkasova, Ludmila and Loo, Boon Thau},
+  booktitle={2013 IEEE Sixth International Conference on Cloud Computing},
+  pages={839--846},
+  year={2013},
+  organization={IEEE}
+}
+
+@article{li2017fundamental,
+  title={A fundamental tradeoff between computation and communication in distributed computing},
+  author={Li, Songze and Maddah-Ali, Mohammad Ali and Yu, Qian and Avestimehr, A Salman},
+  journal={IEEE Transactions on Information Theory},
+  volume={64},
+  number={1},
+  pages={109--128},
+  year={2017},
+  publisher={IEEE}
+}
+
+@article{jiang2022reliable,
+  title={Reliable distributed computing for metaverse: A hierarchical game-theoretic approach},
+  author={Jiang, Yuna and Kang, Jiawen and Niyato, Dusit and Ge, Xiaohu and Xiong, Zehui and Miao, Chunyan and Shen, Xuemin},
+  journal={IEEE Transactions on Vehicular Technology},
+  year={2022},
+  publisher={IEEE}
+}
+
+@inproceedings{Zippel,
+  title={Probabilistic algorithms for sparse polynomials},
+  author={Zippel, Richard},
+  booktitle={International symposium on symbolic and algebraic manipulation},
+  pages={216--226},
+  year={1979},
+  organization={Springer}
+}
+
+@article{Demillo_Lipton,
+  title={A probabilistic remark on algebraic program testing},
+  author={Demillo, Richard A and Lipton, Richard J},
+  journal={Information Processing Letters},
+  volume={7},
+  number={4},
+  pages={193--195},
+  year={1978},
+  publisher={Elsevier}
+}
+
+@InProceedings{CCG,
+  title = 	 {Communication-Computation Efficient Gradient Coding},
+  author =       {Ye, Min and Abbe, Emmanuel},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {5610--5619},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {10--15 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v80/ye18a/ye18a.pdf},
+  url = 	 {https://proceedings.mlr.press/v80/ye18a.html},
+  abstract = 	 {This paper develops coding techniques to reduce the running time of distributed learning tasks. It characterizes the fundamental tradeoff to compute gradients in terms of three parameters: computation load, straggler tolerance and communication cost. It further gives an explicit coding scheme that achieves the optimal tradeoff based on recursive polynomial constructions, coding both across data subsets and vector components. As a result, the proposed scheme allows to minimize the running time for gradient computations. Implementations are made on Amazon EC2 clusters using Python with mpi4py package. Results show that the proposed scheme maintains the same generalization error while reducing the running time by $32\% $ compared to uncoded schemes and $23\%$ compared to prior coded schemes focusing only on stragglers (Tandon et al., ICML 2017).}
+}
+
+@article{m=1,
+  title={Distributed linearly separable computation},
+  author={Wan, Kai and Sun, Hua and Ji, Mingyue and Caire, Giuseppe},
+  journal={IEEE Transactions on Information Theory},
+  volume={68},
+  number={2},
+  pages={1259--1278},
+  year={2021},
+  publisher={IEEE}
+}
+
+@INPROCEEDINGS{uncoded_cache,
+  author={Kai Wan and Tuninetti, Daniela and Piantanida, Pablo},
+  booktitle={2016 IEEE Information Theory Workshop (ITW)}, 
+  title={On the optimality of uncoded cache placement}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={161-165},
+  doi={10.1109/ITW.2016.7606816}}
+
+
+@article{Short-dot,
+  title={Short-dot: Computing large linear transforms distributedly using coded short dot products},
+  author={Dutta, Sanghamitra and Cadambe, Viveck and Grover, Pulkit},
+  journal={Advances In Neural Information Processing Systems},
+  volume={29},
+  year={2016}
+}
+
+@article{2021adaptive,
+  title={Adaptive gradient coding},
+  author={Cao, Hankun and Yan, Qifa and Tang, Xiaohu and Han, Guojun},
+  journal={IEEE/ACM Transactions on Networking},
+  volume={30},
+  number={2},
+  pages={717--734},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{yu2020straggler,
+  title={Straggler mitigation in distributed matrix multiplication: Fundamental limits and optimal coding},
+  author={Yu, Qian and Maddah-Ali, Mohammad Ali and Avestimehr, A Salman},
+  journal={IEEE Transactions on Information Theory},
+  volume={66},
+  number={3},
+  pages={1920--1933},
+  year={2020},
+  publisher={IEEE}
+}
+
+@article{wang2018fundamental,
+  title={Fundamental limits of coded linear transform},
+  author={Wang, Sinong and Liu, Jiashang and Shroff, Ness and Yang, Pengyu},
+  journal={arXiv preprint arXiv:1804.09791},
+  year={2018}
+}
+@article{2009coordinate,
+  title={A coordinate gradient descent method for nonsmooth separable minimization},
+  author={Tseng, Paul and Yun, Sangwoon},
+  journal={Mathematical Programming},
+  volume={117},
+  number={1},
+  pages={387--423},
+  year={2009},
+  publisher={Springer}
+}
+
+@inproceedings{konidaris2011value,
+  title={Value function approximation in reinforcement learning using the Fourier basis},
+  author={Konidaris, George and Osentoski, Sarah and Thomas, Philip},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={25},
+  number={1},
+  pages={380--385},
+  year={2011}
+}
+
+@article{yu2020coded_resilient,
+  title={Coded computing for resilient, secure, and privacy-preserving distributed matrix multiplication},
+  author={Yu, Qian and Avestimehr, A Salman},
+  journal={IEEE Transactions on Communications},
+  volume={69},
+  number={1},
+  pages={59--72},
+  year={2020},
+  publisher={IEEE}
+}
+@article{khalesi2022multi,
+  title={Multi-user linearly-separable distributed computing},
+  author={Khalesi, Ali and Elia, Petros},
+  journal={arXiv preprint arXiv:2206.11119},
+  year={2022}
+}
+@article{wan2022secure,
+  title={On secure distributed linearly separable computation},
+  author={Wan, Kai and Sun, Hua and Ji, Mingyue and Caire, Giuseppe},
+  journal={IEEE Journal on Selected Areas in Communications},
+  volume={40},
+  number={3},
+  pages={912--926},
+  year={2022},
+  publisher={IEEE}
+}
+
+@article{bitar2022adaptive,
+  title={Adaptive private distributed matrix multiplication},
+  author={Bitar, Rawad and Xhemrishi, Marvin and Wachter-Zeh, Antonia},
+  journal={IEEE Transactions on Information Theory},
+  volume={68},
+  number={4},
+  pages={2653--2673},
+  year={2022},
+  publisher={IEEE}
+}
+@article{ozfatura2021coded,
+  title={Coded distributed computing with partial recovery},
+  author={Ozfatura, Emre and Ulukus, Sennur and G{\"u}nd{\"u}z, Deniz},
+  journal={IEEE Transactions on Information Theory},
+  volume={68},
+  number={3},
+  pages={1945--1959},
+  year={2021},
+  publisher={IEEE}
+}
+@article{abdi2010principal,
+  title={Principal component analysis},
+  author={Abdi, Herv{\'e} and Williams, Lynne J},
+  journal={Wiley interdisciplinary reviews: computational statistics},
+  volume={2},
+  number={4},
+  pages={433--459},
+  year={2010},
+  publisher={Wiley Online Library}
+}
+
+@book{akenine2019real,
+  title={Real-time rendering},
+  author={Akenine-Moller, Tomas and Haines, Eric and Hoffman, Naty},
+  year={2019},
+  publisher={AK Peters/crc Press}
+}
+
+@article{dong1996nonlinear,
+  title={Nonlinear principal component analysis—based on principal curves and neural networks},
+  author={Dong, Dong and McAvoy, Thomas J},
+  journal={Computers \& Chemical Engineering},
+  volume={20},
+  number={1},
+  pages={65--78},
+  year={1996},
+  publisher={Elsevier}
+}
+
+@article{shi2020communicationAI,
+  title={Communication-efficient edge AI: Algorithms and systems},
+  author={Shi, Yuanming and Yang, Kai and Jiang, Tao and Zhang, Jun and Letaief, Khaled B},
+  journal={IEEE Communications Surveys \& Tutorials},
+  volume={22},
+  number={4},
+  pages={2167--2191},
+  year={2020},
+  publisher={IEEE}
+}
+
+
+@article{charalambides2023federated,
+  title={Federated Coded Matrix Inversion},
+  author={Charalambides, Neophytos and Pilanci, Mert and Hero, Alfred},
+  journal={arXiv preprint arXiv:2301.03539},
+  year={2023}
+}
+
+@INPROCEEDINGS{Secure-Linear-MDS-Coded-Matrix-Inversion,
+  author={Charalambides, Neophytos and Pilanci, Mert and Hero, Alfred O.},
+  booktitle={2022 58th Annual Allerton Conference on Communication, Control, and Computing (Allerton)}, 
+  title={Secure Linear MDS Coded Matrix Inversion}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-8},
+  doi={10.1109/Allerton49937.2022.9929386}}
+
+
+@InProceedings{Coded-Sparse-Matrix-Multiplication,
+  title = 	 {Coded Sparse Matrix Multiplication},
+  author =       {Wang, Sinong and Liu, Jiashang and Shroff, Ness},
+  booktitle = 	 {Proceedings of the 35th International Conference on Machine Learning},
+  pages = 	 {5152--5160},
+  year = 	 {2018},
+  editor = 	 {Dy, Jennifer and Krause, Andreas},
+  volume = 	 {80},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {10--15 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v80/wang18e/wang18e.pdf},
+  url = 	 {https://proceedings.mlr.press/v80/wang18e.html},
+  abstract = 	 {In a large-scale and distributed matrix multiplication problem $C=A^{\intercal}B$, where $C\in\mathbb{R}^{r\times t}$, the coded computation plays an important role to effectively deal with “stragglers” (distributed computations that may get delayed due to few slow or faulty processors). However, existing coded schemes could destroy the significant sparsity that exists in large-scale machine learning problems, and could result in much higher computation overhead, i.e., $O(rt)$ decoding time. In this paper, we develop a new coded computation strategy, we call <em>sparse code</em>, which achieves near <em>optimal recovery threshold</em>, <em>low computation overhead</em>, and <em>linear decoding time</em> $O(nnz(C))$. We implement our scheme and demonstrate the advantage of the approach over both uncoded and current fastest coded strategies.}
+}
+
+@ARTICLE{Private-and-Secure-Distributed-Matrix-Multiplication,
+  author={Li, Jie and Hollanti, Camilla},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Private and Secure Distributed Matrix Multiplication Schemes for Replicated or MDS-Coded Servers}, 
+  year={2022},
+  volume={17},
+  number={},
+  pages={659-669},
+  doi={10.1109/TIFS.2022.3147638}}
+
+@ARTICLE{Adaptive-Private-Distributed-Matrix-Multiplication,
+  author={Bitar, Rawad and Xhemrishi, Marvin and Wachter-Zeh, Antonia},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Adaptive Private Distributed Matrix Multiplication}, 
+  year={2022},
+  volume={68},
+  number={4},
+  pages={2653-2673},
+  doi={10.1109/TIT.2022.3143199}}
+
+@INPROCEEDINGS{SpArch_Efficient,
+  author={Zhang, Zhekai and Wang, Hanrui and Han, Song and Dally, William J.},
+  booktitle={2020 IEEE International Symposium on High Performance Computer Architecture (HPCA)}, 
+  title={SpArch: Efficient Architecture for Sparse Matrix Multiplication}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={261-274},
+  doi={10.1109/HPCA47549.2020.00030}}
+
+@ARTICLE{ Leverage-Partial-Stragglers,
+  author={Das, Anindya Bijoy and Ramamoorthy, Aditya},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Coded Sparse Matrix Computation Schemes That Leverage Partial Stragglers}, 
+  year={2022},
+  volume={68},
+  number={6},
+  pages={4156-4181},
+  doi={10.1109/TIT.2022.3152827}}
+
+@ARTICLE{Secure_Distributed_Matrix_Computation_With_Discrete_Fourier_Transform,
+  author={Mital, Nitish and Ling, Cong and Gündüz, Deniz},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Secure Distributed Matrix Computation With Discrete Fourier Transform}, 
+  year={2022},
+  volume={68},
+  number={7},
+  pages={4666-4680},
+  doi={10.1109/TIT.2022.3158868}}
+
+@INPROCEEDINGS{Entangled_Polynomial_Codes,
+  author={
+   and Avestimehr, A. Salman},
+  booktitle={2020 IEEE International Symposium on Information Theory (ISIT)}, 
+  title={Entangled Polynomial Codes for Secure, Private, and Batch Distributed Matrix Multiplication: Breaking the "Cubic" Barrier}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={245-250},
+  doi={10.1109/ISIT44484.2020.9174167}}
+
+@ARTICLE{6G:_The_Next_Horizon,
+  author={Rong, Bo},
+  journal={IEEE Wireless Communications}, 
+  title={6G: The Next Horizon: From Connected People and Things to Connected Intelligence}, 
+  year={2021},
+  volume={28},
+  number={5},
+  pages={8-8},
+  doi={10.1109/MWC.2021.9615100}}
+
+@article{cloud2011amazon,
+  title={Amazon web services},
+  author={Cloud, Amazon Elastic Compute},
+  journal={Retrieved November},
+  volume={9},
+  number={2011},
+  pages={2011},
+  year={2011}
+}
+
+@book{Google_cloud,
+  title={Building machine learning and deep learning models on Google cloud platform: A comprehensive guide for beginners},
+  author={Bisong, Ekaba},
+  year={2019},
+  publisher={Apress}
+}
+
+@book{microsoft_azure,
+  title={Cloud architecture patterns: using microsoft azure},
+  author={Wilder, Bill},
+  year={2012},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@inproceedings{Proceedings_of_Machine_Learning_and_Systems,
+ author = {Hashemi, Sayed Hadi and Abdu Jyothi, Sangeetha and Campbell, Roy},
+ booktitle = {Proceedings of Machine Learning and Systems},
+ editor = {A. Talwalkar and V. Smith and M. Zaharia},
+ pages = {418--430},
+ title = {TicTac: Accelerating Distributed Deep Learning with Communication Scheduling},
+ url = {https://proceedings.mlsys.org/paper/2019/file/84d9ee44e457ddef7f2c4f25dc8fa865-Paper.pdf},
+ volume = {1},
+ year = {2019}
+}
+
+@ARTICLE{Speeding_Up_Distributed,
+  author={Lee, Kangwook and Lam, Maximilian and Pedarsani, Ramtin and Papailiopoulos, Dimitris and Ramchandran, Kannan},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Speeding Up Distributed Machine Learning Using Codes}, 
+  year={2018},
+  volume={64},
+  number={3},
+  pages={1514-1529},
+  doi={10.1109/TIT.2017.2736066}}
+
+@inproceedings{zaharia2010spark,
+  title={Spark: Cluster computing with working sets},
+  author={Zaharia, Matei and Chowdhury, Mosharaf and Franklin, Michael J and Shenker, Scott and Stoica, Ion},
+  booktitle={2nd USENIX Workshop on Hot Topics in Cloud Computing (HotCloud 10)},
+  year={2010}
+}
+
+@article{dean2008mapreduce,
+  title={MapReduce: simplified data processing on large clusters},
+  author={Dean, Jeffrey and Ghemawat, Sanjay},
+  journal={Communications of the ACM},
+  volume={51},
+  number={1},
+  pages={107--113},
+  year={2008},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{wang2022big_data_analytics,
+  title={Big data analytics for intelligent manufacturing systems: A review},
+  author={Wang, Junliang and Xu, Chuqiao and Zhang, Jie and Zhong, Ray},
+  journal={Journal of Manufacturing Systems},
+  volume={62},
+  pages={738--752},
+  year={2022},
+  publisher={Elsevier}
+}
+
+@article{shi2020communication,
+  title={Communication-efficient edge AI: Algorithms and systems},
+  author={Shi, Yuanming and Yang, Kai and Jiang, Tao and Zhang, Jun and Letaief, Khaled B},
+  journal={IEEE Communications Surveys \& Tutorials},
+  volume={22},
+  number={4},
+  pages={2167--2191},
+  year={2020},
+  publisher={IEEE}
+}
+
+@article{wangni2018gradient_sparsification,
+  title={Gradient sparsification for communication-efficient distributed optimization},
+  author={Wangni, Jianqiao and Wang, Jialei and Liu, Ji and Zhang, Tong},
+  journal={Advances in Neural Information Processing Systems},
+  volume={31},
+  year={2018}
+}
+
+@article{garg2014communication,
+  title={On communication cost of distributed statistical estimation and dimensionality},
+  author={Garg, Ankit and Ma, Tengyu and Nguyen, Huy},
+  journal={Advances in Neural Information Processing Systems},
+  volume={27},
+  year={2014}
+}
+
+@inproceedings{A_unified_coding_framework,
+  title={A unified coding framework for distributed computing with straggling servers},
+  author={Li, Songze and Maddah-Ali, Mohammad Ali and Avestimehr, A Salman},
+  booktitle={2016 IEEE Globecom Workshops (GC Wkshps)},
+  pages={1--6},
+  year={2016},
+  organization={IEEE}
+}
+
+@article{Large_scale_distributed_deep_networks,
+  title={Large scale distributed deep networks},
+  author={Dean, Jeffrey and Corrado, Greg and Monga, Rajat and Chen, Kai and Devin, Matthieu and Mao, Mark and Ranzato, Marc'aurelio and Senior, Andrew and Tucker, Paul and Yang, Ke and others},
+  journal={Advances in neural information processing systems},
+  volume={25},
+  year={2012}
+}
+
+@article{neural_network_training,
+  title={Large scale distributed neural network training through online distillation},
+  author={Anil, Rohan and Pereyra, Gabriel and Passos, Alexandre and Ormandi, Robert and Dahl, George E and Hinton, Geoffrey E},
+  journal={arXiv preprint arXiv:1804.03235},
+  year={2018}
+}
+
+@article{LEAP+_Efficient_security_mechanisms,
+  title={LEAP+ Efficient security mechanisms for large-scale distributed sensor networks},
+  author={Zhu, Sencun and Setia, Sanjeev and Jajodia, Sushil},
+  journal={ACM Transactions on Sensor Networks (TOSN)},
+  volume={2},
+  number={4},
+  pages={500--528},
+  year={2006},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{Gradient_coding_from_cyclic_MDS_codes_and_expander_graphs,
+  title={Gradient coding from cyclic MDS codes and expander graphs},
+  author={Raviv, Netanel and Tamo, Itzhak and Tandon, Rashish and Dimakis, Alexandros G},
+  journal={IEEE Transactions on Information Theory},
+  volume={66},
+  number={12},
+  pages={7475--7489},
+  year={2020},
+  publisher={IEEE}
+}
+
+@inproceedings{yu2019lagrange,
+  title={Lagrange coded computing: Optimal design for resiliency, security, and privacy},
+  author={Yu, Qian and Li, Songze and Raviv, Netanel and Kalan, Seyed Mohammadreza Mousavi and Soltanolkotabi, Mahdi and Avestimehr, Salman A},
+  booktitle={The 22nd International Conference on Artificial Intelligence and Statistics},
+  pages={1215--1225},
+  year={2019},
+  organization={PMLR}
+}
+
+@article{zhao2019load,
+  title={Load scheduling for distributed edge computing: A communication-computation tradeoff},
+  author={Zhao, Minghui and Wang, Wei and Wang, Yitu and Zhang, Zhaoyang},
+  journal={Peer-to-Peer Networking and Applications},
+  volume={12},
+  number={5},
+  pages={1418--1432},
+  year={2019},
+  publisher={Springer}
+}
+
+@inproceedings{halbawi2018improving,
+  title={Improving distributed gradient descent using reed-solomon codes},
+  author={Halbawi, Wael and Azizan, Navid and Salehi, Fariborz and Hassibi, Babak},
+  booktitle={2018 IEEE International Symposium on Information Theory (ISIT)},
+  pages={2027--2031},
+  year={2018},
+  organization={IEEE}
+}
+
+@ARTICLE{Coded_Sparse_Matrix_Computation_Schemes_That_Leverage_Partial_Stragglers,
+  author={Das, Anindya Bijoy and Ramamoorthy, Aditya},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Coded Sparse Matrix Computation Schemes That Leverage Partial Stragglers}, 
+  year={2022},
+  volume={68},
+  number={6},
+  pages={4156-4181},
+  doi={10.1109/TIT.2022.3152827}}
+
+@article{gomadam2011interference_alignment,
+  title={A distributed numerical approach to interference alignment and applications to wireless interference networks},
+  author={Gomadam, Krishna and Cadambe, Viveck R and Jafar, Syed A},
+  journal={IEEE Transactions on Information Theory},
+  volume={57},
+  number={6},
+  pages={3309--3322},
+  year={2011},
+  publisher={IEEE}
+}
+
+
+
+
+@INPROCEEDINGS{01Cloud_Computing_Resources_Utilization,
+  author={Kumawat, Nirmal and Handa, Nikhil and Kharbanda, Avinash},
+  booktitle={2020 IEEE International Conference on Smart Cloud (SmartCloud)}, 
+  title={Cloud Computing Resources Utilization and Cost Optimization for Processing Cloud Assets}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={41-48},
+  doi={10.1109/SmartCloud49737.2020.00017}}
+
+
+
+@INPROCEEDINGS{Sequantial,
+  author={Kiani, Shahrzad and Ferdinand, Nuwan and Draper, Stark C.},
+  booktitle={2018 IEEE International Symposium on Information Theory (ISIT)}, 
+  title={Exploitation of Stragglers in Coded Computation}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={1988-1992},
+  doi={10.1109/ISIT.2018.8437871}}
+
+
+
+@INPROCEEDINGS{huang2023ISITversion,
+  author={Huang, Wenbo and Wan, Kai and Sun, Hua and Ji, Mingyue and Qiu, Robert Caiming and Caire, Giuseppe},
+  booktitle={2023 IEEE International Symposium on Information Theory (ISIT)}, 
+  title={Fundamental Limits of Distributed Linearly Separable Computation under Cyclic Assignment}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={2296-2301},
+  doi={10.1109/ISIT54713.2023.10206661}}
+
+
+
+@ARTICLE{Heterogeneous_Gradient_Coding,
+  author={Jahani-Nezhad, Tayyebeh and Maddah-Ali, Mohammad Ali},
+  journal={IEEE Journal on Selected Areas in Information Theory}, 
+  title={Optimal Communication-Computation Trade-Off in Heterogeneous Gradient Coding}, 
+  year={2021},
+  volume={2},
+  number={3},
+  pages={1002-1011},
+  doi={10.1109/JSAIT.2021.3085676}}
+
+
+@ARTICLE{2008Interference_Alignment,
+  author={Cadambe, Viveck R. and Jafar, Syed Ali},
+  journal={IEEE Transactions on Information Theory}, 
+  title={Interference Alignment and Degrees of Freedom of the  $K$-User Interference Channel}, 
+  year={2008},
+  volume={54},
+  number={8},
+  pages={3425-3441},
+  doi={10.1109/TIT.2008.926344}}
+
+
+
+
+@article{MIMO_interference_channel,
+  title={Degrees of freedom for the MIMO interference channel},
+  author={Jafar, Syed Ali and Fakhereddin, Maralle Jamal},
+  journal={IEEE Transactions on Information Theory},
+  volume={53},
+  number={7},
+  pages={2637--2642},
+  year={2007},
+  publisher={IEEE}
+}
+@article{ruan2013feasibility_interference_alignment,
+  title={The feasibility conditions for interference alignment in MIMO networks},
+  author={Ruan, Liangzhong and Lau, Vincent KN and Win, Moe Z},
+  journal={IEEE Transactions on Signal Processing},
+  volume={61},
+  number={8},
+  pages={2066--2077},
+  year={2013},
+  publisher={IEEE}
+}
+@ARTICLE{Flexible_PS,
+  author={Aliasgari, Malihe and Simeone, Osvaldo and Kliewer, Jörg},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Private and Secure Distributed Matrix Multiplication With Flexible Communication Load}, 
+  year={2020},
+  volume={15},
+  number={},
+  pages={2722-2734},
+  doi={10.1109/TIFS.2020.2972166}
+}
+
+@inproceedings{10.5555/1382436.1382751,
+author = {Yao, Andrew C.},
+title = {Protocols for secure computations},
+year = {1982},
+publisher = {IEEE Computer Society},
+address = {USA},
+booktitle = {Proceedings of the 23rd Annual Symposium on Foundations of Computer Science},
+pages = {160–164},
+numpages = {5},
+series = {SFCS '82}
+}
+
+@ARTICLE{Jahani2021OptimalCommunication-Computation,
+  author={Jahani-Nezhad, Tayyebeh and Maddah-Ali, Mohammad Ali},
+  journal={IEEE Journal on Selected Areas in Information Theory}, 
+  title={Optimal Communication-Computation Trade-Off in Heterogeneous Gradient Coding}, 
+  year={2021},
+  volume={2},
+  number={3},
+  pages={1002-1011},
+  keywords={Encoding;Distributed databases;Servers;Training;Task analysis;Machine learning;Load modeling;Gradient coding;heterogeneous systems;communication-computation trade-off;distributed computing;approximate computing},
+  doi={10.1109/JSAIT.2021.3085676}}
+
+@ARTICLE{Shannon,
+  author={Shannon, C. E.},
+  journal={The Bell System Technical Journal}, 
+  title={Communication theory of secrecy systems}, 
+  year={1949},
+  volume={28},
+  number={4},
+  pages={656-715},
+  keywords={},
+  doi={10.1002/j.1538-7305.1949.tb00928.x}}
+
+@article{maurer1992conditionally,
+  title={Conditionally-perfect secrecy and a provably-secure randomized cipher},
+  author={Maurer, Ueli M},
+  journal={Journal of Cryptology},
+  volume={5},
+  pages={53--66},
+  year={1992},
+  publisher={Springer}
+}
+
+@article{shamir1979share,
+author = {Shamir, Adi},
+title = {How to share a secret},
+year = {1979},
+issue_date = {Nov. 1979},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {22},
+number = {11},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/359168.359176},
+doi = {10.1145/359168.359176},
+abstract = {In this paper we show how to divide data D into n pieces in such a way that D is easily reconstructable from any k pieces, but even complete knowledge of k - 1 pieces reveals absolutely no information about D. This technique enables the construction of robust key management schemes for cryptographic systems that can function securely and reliably even when misfortunes destroy half the pieces and security breaches expose all but one of the remaining pieces.},
+journal = {Commun. ACM},
+month = nov,
+pages = {612–613},
+numpages = {2},
+keywords = {cryptography, interpolation, key management}
+}
+
+@inproceedings{cramer2000complexity,
+  title={On the complexity of verifiable secret sharing and multiparty computation},
+  author={Cramer, Ronald and Damg{\aa}rd, Ivan and Dziembowski, Stefan},
+  booktitle={Proceedings of the thirty-second annual ACM symposium on Theory of computing},
+  pages={325--334},
+  year={2000}
+}
+
+@INPROCEEDINGS{fereidooni2021safe,
+  author={Fereidooni, Hossein and Marchal, Samuel and Miettinen, Markus and Mirhoseini, Azalia and Möllering, Helen and Nguyen, Thien Duc and Rieger, Phillip and Sadeghi, Ahmad-Reza and Schneider, Thomas and Yalame, Hossein and Zeitouni, Shaza},
+  booktitle={2021 IEEE Security and Privacy Workshops (SPW)}, 
+  title={SAFELearn: Secure Aggregation for private FEderated Learning}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={56-62},
+  keywords={Training;Privacy;Data privacy;Computational modeling;Training data;Machine learning;Collaborative work;Federated Learning;Inference Attacks;Secure Computation;Data Privacy},
+  doi={10.1109/SPW53761.2021.00017}}
+
+@article{bonawitz2016practical,
+  title={Practical secure aggregation for federated learning on user-held data},
+  author={Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+  journal={arXiv preprint arXiv:1611.04482},
+  year={2016}
+}
+
+@article{lemma3,
+  title={Fast probabilistic algorithms for verification of polynomial identities},
+  author={Schwartz, Jacob T},
+  journal={Journal of the ACM (JACM)},
+  volume={27},
+  number={4},
+  pages={701--717},
+  year={1980},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{lemma2,
+  title={Probabilistic algorithms for sparse polynomials},
+  author={Zippel, Richard},
+  booktitle={International symposium on symbolic and algebraic manipulation},
+  pages={216--226},
+  year={1979},
+  organization={Springer}
+}
+
+@article{lemma1,
+  title={A probabilistic remark on algebraic program testing},
+  author={DeMillo, Richard A and Lipton, Richard J},
+  journal={Information processing letters},
+  volume={7},
+  number={4},
+  pages={193--195},
+  year={1978},
+  publisher={Elsevier}
+}
