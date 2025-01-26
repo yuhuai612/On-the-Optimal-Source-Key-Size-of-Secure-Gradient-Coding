@@ -221,18 +221,18 @@ Secure gradient coding ensures that the user can only retrieve the sum of gradie
 \begin{align}
 I\left(g_{1}, \ldots, g_{\Ksf}; X_{[\Nsf]} \mid g_1 + \ldots + g_{\Ksf} \right) = 0, \label{eq:security}
 \end{align}
-where \( X_{[\Nsf]} \) denotes the encoded messages sent by all servers to the user. The secure gradient coding under minimum computation cost $ \msf = 1$ was first proposed in~\cite{wan2022secure}, and it discussed the minimum key size without increasing the communication cost.\footnote{The computation cost is defined as the number of datasets assigned to each server, while the communication cost is defined as the number of (coded) messages that the user should receive.}   
+where \( X_{[\Nsf]} \) denotes the encoded messages sent by all servers to the user. The secure gradient coding under minimum computation cost $ \msf = 1$ was first proposed in~\cite{wan2022secure}, and it discussed the minimum source key size without increasing the communication cost.\footnote{The computation cost is defined as the number of datasets assigned to each server, while the communication cost is defined as the number of (coded) messages that the user should receive.}   
 \fi 
  
 
 Note that, recently,  secure aggregation for  federated learning has also gained significant attention \cite{fereidooni2021safe,choi2020communication, lightsecagg,jahani2022swiftagg,zhao2022information}. 
 In secure aggregation for  federated learning, each distributed computing node holds its own local data to compute the gradient; thus secure aggregation against stragglers (or user dropouts) requires two-round transmissions. In contrast, in the gradient coding problem, an additional data assignment phase for servers exists, and because of the redundancy in data assignment, one-round transmission is enough for secure aggregation.
 
-%achieves secure aggregation with only two rounds of communication, effectively reducing the communication cost. One of the bottlenecks of secure aggregation is key size. Based on the key size, the computation cost for key generation and the communication cost for key sharing will seriously influence the system computation capability. \cite{choi2020communication, jahani2022swiftagg} decrease the key size generated locally by each server, which in turn reduces both the computation cost and the communication cost between servers.
+%achieves secure aggregation with only two rounds of communication, effectively reducing the communication cost. One of the bottlenecks of secure aggregation is source key size. Based on the source key size, the computation cost for key generation and the communication cost for key sharing will seriously influence the system computation capability. \cite{choi2020communication, jahani2022swiftagg} decrease the source key size generated locally by each server, which in turn reduces both the computation cost and the communication cost between servers.
 
 \iffalse
-Key size is a crucial factor affecting both the computation cost and communication cost in secure aggregation, while individual key size influences the storage cost for each participant.
-%{\red Why do we discuss the key size and individual key size? } 
+Key size is a crucial factor affecting both the computation cost and communication cost in secure aggregation, while individual source key size influences the storage cost for each participant.
+%{\red Why do we discuss the source key size and individual key size? } 
 In the secure distributed linearly separable computation problem, all keys are shared by a third trusted server to the servers~\cite{wan2022secure}. Since the demand matrix is constantly changing in real-time applications such as those in \cite{Yu_2021_ICCV} and convolution computations \cite{cong2014minimizing}, if we follow the key distribution method proposed in \cite{wan2022secure}, the third trusted server would need to broadcast all keys to the servers. In our proposed scheme, the third trusted server sends a unique key combination to each server at the beginning, independent of the demand matrix. It is clear that in our scheme, the third trusted server can perform key distribution without needing to know the demand.
 This significantly reduces the communication cost for key sharing between the third trusted server and the servers and the storage cost for each server.
  Moreover, our scheme achieves the optimal individual key size with minimal communication cost. We also extend the scheme in \cite{wan2022secure} to make it work for general computation cost and provide the minimum key size.
@@ -240,11 +240,11 @@ This significantly reduces the communication cost for key sharing between the th
 \paragraph*{Main Contributions} 
 In this paper, we aim to characterize the minimum source key size for the case $\msf>1$, while achieving the optimal communication cost under   linear encoding.  Our main contributions are as follows.
 \begin{itemize}
-\item For a given data assignment, we provide an information-theoretic converse bound on the key size, while achieving the optimal communication cost under   linear encoding.
-\item To reduce the key size, we introduce a  secure gradient coding  scheme with a new data assignment strategy. This scheme outperforms the widely used cyclic assignment scheme and can achieve the converse bound under some system parameters.
+\item For a given data assignment, we provide an information-theoretic converse bound on the source key size, while achieving the optimal communication cost under   linear encoding.
+\item To reduce the source key size, we introduce a  secure gradient coding  scheme with a new data assignment strategy. This scheme outperforms the widely used cyclic assignment scheme and can achieve the converse bound under some system parameters.
 \iffalse
-\item For any fixed data assignment, we propose an information-theoretic converse bound on the key size, while maintaining the optimal communication cost.   
-\item To minimize the key size, we propose a new computing scheme with a novel assignment strategy. The computing scheme can cover the optimality results of the computational scheme with fractional repetition assignment; in general, it requires a smaller key size than the computing scheme with cyclic assignment while enabling optimal communication costs. 
+\item For any fixed data assignment, we propose an information-theoretic converse bound on the source key size, while maintaining the optimal communication cost.   
+\item To minimize the source key size, we propose a new computing scheme with a novel assignment strategy. The computing scheme can cover the optimality results of the computational scheme with fractional repetition assignment; in general, it requires a smaller source key size than the computing scheme with cyclic assignment while enabling optimal communication costs. 
 \fi
 
 %The new computing scheme is also applicable to the case of minimal computational cost in \cite{wan2022secure}.
@@ -373,7 +373,7 @@ as the communication cost, which represents the maximum normalized number of sym
 
 The secure aggregation protocol imposes that  
 \begin{align}
-    I\left(g_{1},\ldots, g_{\Ksf};   X_{[\Nsf]} | g_1+\ldots+g_{\Ksf}  \right) = 0,
+    I\left(g_{1},\ldots, g_{\Ksf};   X_{[\Nsf]} | g_1+\ldots+g_{\Ksf}  \right) = 0, \label{eq:security}
 \end{align}
 where $X_{[\Nsf]}$ presents the whole messages from $\Nsf$ servers which may be received by the user. This equation ensures that, except for the computation task, the user cannot obtain any information about the datasets.
 
@@ -381,7 +381,7 @@ If the source key size is large enough, the optimal communication cost under lin
 \begin{thm}[\cite{wan2022secure,ye2018communication}]
 \label{thm:communication cost}
 For the  $(\Ksf,\Nsf,\Nsf_{\rm r}, \msf)$ secure gradient coding problem, the optimal communication cost under linear encoding is 
-$ \frac{\Nsf_{\rm r}}{\msf}$
+$ \frac{\Nsf_{\rm r}}{\msf}$.
 \end{thm}
 
 
@@ -398,7 +398,7 @@ Our main objective in this paper is to minimize the source key size $\eta$ while
 \section{Main Results}
 \label{sec:main}
 %In the following, we present our main results.
-We first introduce a novel converse bound on $ \eta $ for a fixed assignment, {\red whose proof can be found in the extended version of this paper~\cite[Appendix ????]{GITHUB}.}
+We first introduce a novel converse bound on $ \eta $ for a fixed assignment, whose proof can be found in Appendix~\ref{sec:bound proof}.
 \begin{thm}
 \label{thm:bound of η}
 For the $(\Ksf,\Nsf,\Nsf_{\rm r}, \msf)$ secure gradient coding problem, for a fixed assignment \(\mathbf{Z} = (\Zc_1, \ldots, \Zc_{\Nsf})\), if there exists an ordered set of servers in \([\Nsf]\), denoted by \(\sv = (s_1, \ldots, s_{|\sv|})\), where each server contains at least one dataset that appears in the datasets of its preceding servers at most \(\msf - 1\) times, this can be expressed as:
@@ -412,7 +412,7 @@ It must hold that
 \eta \geq \frac{|\sv|}{\msf}-1. \label{eq:converse lemma}
 \end{align}
 \end{thm}
-Theorem~\ref{thm:bound of η} indicates that minimizing key size $\eta$ is a combinatorial problem that depends on the data assignment. 
+Theorem~\ref{thm:bound of η} indicates that minimizing source key size $\eta$ is a combinatorial problem that depends on the data assignment. 
 Further, we can establish a min-max problem to characterize the minimum $\eta^{\star}$ as follows.
 \begin{cor}
     For the $(\Ksf,\Nsf,\Nsf_{\rm r}, \msf)$ secure gradient coding problem, we have
@@ -422,7 +422,8 @@ Further, we can establish a min-max problem to characterize the minimum $\eta^{\
 \end{align}
 \end{cor}
 
-The essence of min-max problems lies in balancing extreme values across all chosen $\sv$.\footnote{According to the extremal principle, if there exists a data assignment method that equalizes or minimizes the differences in the objective function values, such an assignment is typically globally optimal. Thus, we would like to divide the servers into different groups and make servers in the same group assigned datasets as similar as possible.} In order to simplify the computation, we provide a loosen converse bound on $\eta^{\star}$, {\red whose proof could be found in~\cite[Appendix ???]{GITHUB}.}
+The essence of min-max problems lies in balancing extreme values across all chosen $\sv$.%\footnote{According to the extremal principle, if there exists a data assignment method that equalizes or minimizes the differences in the objective function values, such an assignment is typically globally optimal. Thus, we would like to divide the servers into different groups and make servers in the same group assigned datasets as similar as possible.} 
+ In order to simplify the computation, we provide a loosen converse bound on $\eta^{\star}$, whose proof could be found in Appendix~\ref{sec:bound proof}.
 %whose $|\sv|$ are equal in Corollary~\ref{cor:converse cor}, and propose an achievable scheme in Theorem~\ref{thm:main achievable scheme}. 
 
 \begin{cor}
@@ -465,19 +466,19 @@ h(\Nsf,\Msf)=h(\Msf,2\Msf-\Nsf). \label{eq:less than 1.5M}
   \end{itemize}
     \hfill $\square$ 
  \end{thm} 
-Notice that $\lambda$ in Fig.~\ref{fig:scheme} represents the number of totally transmitted linearly independent combinations of merged messages, and we aim to minimize it.
+
  
-\begin{rem}[The key size in extreme cases]
+\begin{rem}[The source key size in extreme cases]
 \label{rem:extreme cases}
 \em
 
-For the $(\Ksf,\Nsf,\Nsf_{\rm r}, \msf)$ secure gradient coding problem with  $\Msf= \Nsf - \Nsf_{\rm r} + \msf$, and $\Msf$ divides $\Nsf$, the minimum key size is
+For the $(\Ksf,\Nsf,\Nsf_{\rm r}, \msf)$ secure gradient coding problem with  $\Msf= \Nsf - \Nsf_{\rm r} + \msf$, and $\Msf$ divides $\Nsf$, the minimum source key size is
 \begin{align}
     \eta^{\star} = \frac{\Nsf}{\Msf} - 1, \label{eq:gradient eta rho rep}
 \end{align}
 which matches the converse~\eqref{cor:converse cor} and is achievable using fractional repetition assignment.
 
-Under the cyclic assignment constraint, the minimum key size required for optimal communication cost is
+Under the cyclic assignment constraint, the minimum source key size required for optimal communication cost is
 \begin{align}
     \eta^{\star}_{\text{cyc}} = \frac{\Nsf_{\rm r}}{\msf} - 1. \label{eq:gradient eta cyc}
 \end{align}
@@ -493,8 +494,8 @@ We divide the $\Ksf$ datasets into $\Nsf$ non-overlapping, equal-length groups, 
 \fi
 
 
-At the end of this section, we present numerical evaluations comparing the key size in converse in~\eqref{eq:converse cor}, in the cyclic assignment scheme, and in the scheme from Theorem~\ref{thm:main achievable scheme}. %In Fig.~\ref{fig:numerical 1b}, we fix $\Msf = 6, \msf = 2$ and show the tradeoff between $\Nsf$ and $\eta$. In Fig.~\ref{fig:numerical 1c}, we fix $\Nsf = 24, \Msf = 10$ and show the tradeoff between $\msf$ and $\eta$. 
-The results demonstrate that the combined scheme requires a significantly smaller key size than the cyclic assignment scheme and coincides with the relaxed converse at some points.
+At the end of this section, we present numerical evaluations comparing the source key size in converse in~\eqref{eq:converse cor}, in the cyclic assignment scheme, and in the scheme from Theorem~\ref{thm:main achievable scheme}. %In Fig.~\ref{fig:numerical 1b}, we fix $\Msf = 6, \msf = 2$ and show the tradeoff between $\Nsf$ and $\eta$. In Fig.~\ref{fig:numerical 1c}, we fix $\Nsf = 24, \Msf = 10$ and show the tradeoff between $\msf$ and $\eta$. 
+The results demonstrate that the combined scheme requires a significantly smaller source key size than the cyclic assignment scheme and coincides with the converse at some points.
 
 
 \begin{figure*}%[ht]
@@ -515,31 +516,52 @@ The results demonstrate that the combined scheme requires a significantly smalle
         \caption{\small $(\Msf,\eta)$ tradeoff with $\Nsf=24$ and $\msf=2$.}
         \label{fig:numerical 1a}
     \end{subfigure}\\
-    \fi
+
     \begin{subfigure}[t]{0.5\textwidth}
         \centering
         \includegraphics[scale=0.45]{N varies.pdf}
         \caption{\small $(\Nsf,\eta)$ tradeoff with $\Ksf = \Nsf, \Msf=6, \msf=2$.}
         \label{fig:numerical 1b}
     \end{subfigure}\\
-    \begin{subfigure}[t]{0.5\textwidth}
+    %\begin{subfigure}[t]{0.5\textwidth}
         \centering
+    \fi
         \includegraphics[scale=0.45]{m varies.pdf}
-        \caption{\small $(\msf,\eta)$ tradeoff with $\Ksf = \Nsf=24, \Msf=10$.}
-        \label{fig:numerical 1c}
-    \end{subfigure}
-    \caption{\small Numerical evaluations for the secure gradient coding .}
+        %\caption{\small $(\msf,\eta)$ tradeoff with $\Ksf = \Nsf=24, \Msf=10$.}
+        %\label{fig:numerical 1c}
+    %\end{subfigure}
+    \caption{\small Numerical evaluations for the secure gradient coding with $\Ksf = \Nsf=24, \Msf=10$.}
     \label{fig:numerical 1}
 \end{figure}
 
 
 
-\section{Novel Achievable Scheme For Theorem~\ref{thm:main achievable scheme}}
+\section{New Achievable Schemes For Theorem~\ref{thm:main achievable scheme}}
 \label{sec:Achievable coding scheme}
 \iffalse
 Before presenting our scheme, we note that the $\Ksf$ datasets can be divided into $\Nsf$ non-overlapping groups, with the $i^{\text{th}}$ group $\Gc_i = \{k \in [\Ksf]: \text{Mod}(k,\Nsf) = i\}$ containing $\frac{\Ksf}{\Nsf}$ datasets. Each group $\Gc_i$ is assigned to $\Msf = \Nsf - \Nsf_{\rm r} + \msf$ servers, who collaboratively compute the merged message $W^{\prime}_i$. Thus, we reformulate the $(\Ksf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ secure distributed linearly separable computation problem as an equivalent $(\Nsf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ problem.
 \fi
-Recall Theorem~\ref{thm:bound of η}, which establishes that the key size is dependent on the data assignment. Due to space limitations, in the following, our analysis is confined to the case where $\Ksf = \Nsf$\footnote{Note that the $\Ksf$ datasets can be divided into $\Nsf$ non-overlapping groups, with the $i^{\text{th}}$ group $\Gc_i = \{k \in [\Ksf]: \text{Mod}(k,\Nsf) = i\}$ containing $\frac{\Ksf}{\Nsf}$ datasets. Each group $\Gc_i$ is assigned to $\Msf = \Nsf - \Nsf_{\rm r} + \msf$ servers, who collaboratively compute the merged message $W^{\prime}_i$. Thus, we reformulate the $(\Ksf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ secure distributed linearly separable computation problem as an equivalent $(\Nsf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ problem.}, with a particular focus on the data assignment. To elucidate the coding scheme, we present an illustrative example in Scheme~3. For a comprehensive treatment of the general scheme, readers are referred to Appendix~\ref{sec:general scheme}.
+
+
+%Through the method in~\cite[Scheme 1]{wan2022secure}, as long as we design the non-secure scheme, the secure scheme can be obtained.  
+
+
+For any secure distributed linearly separable scheme, \cite[Theorem 1]{wan2022secure} provides a transfer method from a non-secure scheme to a secure scheme while maintaining the communication cost.
+The required source key size is $\frac{\lambda}{\msf} - 1$, where $\lambda$ represents the number of linearly independent messages transmitted by all the servers, i.e., $H(X_1,\ldots,X_{\Ksf})/\Lsf$. Hence, to design secure gradient coding scheme achieving the optimal communication cost with  source key size as small as possible, we can design 
+non-secure gradient coding scheme achieving the optimal communication cost, while minimizing the  number of linearly independent messages.
+%In Fig.~\ref{fig:scheme}, $\lambda$ denotes the number of totally transmitted linearly independent combinations of merged messages. The source key size can be $\frac{\lambda}{\msf} - 1$. 
+Note that when $\Nsf | \Ksf $, we can transfer the problem into $\Ksf = \Nsf$ using~\cite[Remark 1]{wan2022secure}.  Thus, we focus on minimizing $\lambda$ in the non-secure scheme where $\Ksf= \Nsf$. To elucidate the coding scheme, we present an illustrative example in Scheme~3, where the general description is given in Appendix~\ref{sec:general scheme}.
+
+We mainly solve two challenges introduced by the transition from $\msf=1$ to $\msf > 1$: when dividing the servers into groups and assigning different datasets to different groups, datasets within the same group should be stored at least $\msf$ times, we design a more complex structure; to reduce $\lambda$, we do not use the coding scheme in~\cite{Heterogeneous_Gradient_Coding}, but jointly design the coding scheme across different groups using transmitter Interference Alignment~\cite{2008Interference_Alignment, MIMO_interference_channel, huang2023ISITversion}.   
+For details,  readers can refer to Appendix~\ref{sec:general scheme}.
+
+
+
+
+%Recall Theorem~\ref{thm:bound of η}, which establishes that the key size is dependent on the data assignment. 
+
+%\footnote{Note that the $\Ksf$ datasets can be divided into $\Nsf$ non-overlapping groups, with the $i^{\text{th}}$ group $\Gc_i = \{k \in [\Ksf]: \text{Mod}(k,\Nsf) = i\}$ containing $\frac{\Ksf}{\Nsf}$ datasets. Each group $\Gc_i$ is assigned to $\Msf = \Nsf - \Nsf_{\rm r} + \msf$ servers, who collaboratively compute the merged message $W^{\prime}_i$. Thus, we reformulate the $(\Ksf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ secure distributed linearly separable computation problem as an equivalent $(\Nsf, \Nsf, \Nsf_{\rm r}, 1, \Msf)$ problem.}, 
+%with a particular focus on the data assignment. To elucidate the coding scheme, we present an illustrative example in Scheme~3. For a comprehensive treatment of the general scheme, readers can refer to \cite[Appendix B]{github}.
 
 \subsection{\texorpdfstring{Scheme~1 for~\eqref{eq:from partial rep}}{Scheme 1 for Eq. (X)}}
 \label{sub:partial rep}
@@ -566,7 +588,7 @@ We first consider the data assignment for the servers in $[\Msf]$, whose structu
 \cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7}\cline{8-8}\cline{9-9}
 && &D_1 & \cdots & D_1 & D_1 & \cdots & D_1 \\
 && &\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\ 
-&& \mbox{data}&D_{\ysf} & \cdots & D_{\ysf} & D_{\ysf} & \cdots & D_{\ysf} \\
+&& \mbox{dataset}&D_{\ysf} & \cdots & D_{\ysf} & D_{\ysf} & \cdots & D_{\ysf} \\
 && &D_{\ysf+1} & \cdots & D_{\ysf+1} & D_{\Msf+1} & \cdots & D_{\Msf+1} \\ 
 && &\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
 && &D_{\Msf} & \cdots & D_{\Msf}&  D_{\Nsf} & \cdots & D_{\Nsf}\\  
@@ -593,12 +615,13 @@ We assign the datasets as follows.
 
 
 \begin{align*}
+{\small 
 \begin{array}{rl|c|c|c|}\cline{3-3}\cline{4-4}\cline{5-5}
 &&\rule{0pt}{1.2em}\mbox{server}&\rule{0pt}{1.2em}\mbox{\textnormal{1}}  &\rule{0pt}{1.2em}\mbox{\textnormal{2}} \\ \cline{3-3}\cline{4-4}\cline{5-5}
 && &D_1 & D_1 \\
 && &D_2 & D_2  \\
 && &D_3 & D_3 \\
-&& \mbox{data}&D_4 & D_4  \\
+&& \mbox{dataset}&D_4 & D_4  \\
 && &D_5 & D_5 \\
 && &D_6 & D_6 \\
 && &D_7 & D_7\\
@@ -616,6 +639,7 @@ We assign the datasets as follows.
 &&  D_{11} & D_{12} & D_8 & D_9 & D_{10}\\
 \cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7}
 \end{array}
+}
 \end{align*}
 
 
@@ -637,36 +661,40 @@ We assign the datasets as follows.
 {\it Computing phase.}
 To minimize communication cost, each message $W_k$, for $k \in [\Ksf]$, is divided into $\msf$ equal-length sub-messages, denoted as $W_k = \{W_{k,j} : j \in [\msf]\}$, with each sub-message containing $\frac{\Lsf}{\msf} = \frac{\Lsf}{2}$ symbols in $\mathbb{F}_{\qsf}$. Each server sends a linear combination of messages, allowing the user to recover
 \(\mathbf{F} [W_{1,1}; \ldots; W_{12,2}]\) from any \(\Nsf_{\rm r} = 7\) servers, where
-\(\mathbf{F}\) (shown at the top of the next page in \eqref{eq:F of example3})
-contains `$*$' symbols representing design variables.
+\(\mathbf{F}\) is shown at the top of the page in \eqref{eq:F of example3}. The design of \(\fv_5\) and \(\fv_6\) will be detailed later.
 We define that $[F_1;F_2;F_3;F_4;F_5;F_6]=  {\bf F} \  [W_{1,1};\ldots;W_{12,2}] $.
 \begin{figure*}
 \begin{equation}
- {\bf F} = \begin{bmatrix}  
+\scalebox{0.8}{%
+\(
+{\bf F} = \begin{bmatrix}  
  {\fv}_1 \\
  {\fv}_2 \\
  {\fv}_3 \\
  {\fv}_4\\
  {\fv}_5 \\
  {\fv}_6
- \end{bmatrix}
- =
- \left[
+\end{bmatrix}
+=
+\left[
 \begin{array}{cccccccccccccccccccccccc}
-  1 & 1    &   1 &1 & 1  &     1 &1 & 1 &  1 & 1    &   1 &1 &   0 & 0  &0 &   0 & 0  &0 &   0 & 0  &0 &   0 & 0  &0     \\
-   0 & 0  &0 &   0 & 0  &0 &   0 & 0  &0 &   0 & 0  &0  &  1 & 1    &   1 &1 & 1  &     1 &1 & 1 &  1 & 1    &   1 &1 \\
-  0 & 0  &0  &  2 & 2 & 2  &2  &  1 &1 & 1  &1&1 &   0 & 0  &0  &   0 & 0  &0&   0 & 0  &0&   0 & 0  &0\\
-  0 & 0  &0&   0 & 0  &0&   0 & 0  &0&   0 & 0  &0 & 0 & 0  &0  &  2 & 2 & 2  &2  &  1 &1 & 1  &1&1 \\
-  0  & 0   &   0&0& 0   & 0  &0 &  * &* & *  &  * &*  &  0  & 0   &   0&0& 0   & 0  &0 &  * &* & *  &  * &* \\
-   0  & 0   &   0&0& 0   & 0  &0 &  * &* & *  &  * &*  &  0  & 0   &   0&0& 0   & 0  &0 &  * &* & *  &  * &* \\
-\end{array} 
+  1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  0 & 0 & 0 & 2 & 2 & 2 & 2 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 2 & 1 & 1 & 1 & 1 & 1 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 4 & 2 & 4 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 1 & 3 & 4 & 2 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 4 & 4 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 3 & 1 & 1 & -5 \\
+\end{array}
 \right]
- \label{eq:F of example3}
-\end{equation} % 创建分割线
+\)
+}
+\label{eq:F of example3}
+\end{equation}
 \end{figure*}
 
+
 \textbf{We divide the servers into three groups based on the data assignment: servers 1 and 2 form the first group, those in $[3:7]$ form the second, and those in $[8:12]$ form the third. We require that the $\msf=2$ linear combinations \((F_1 - F_3)\) and \((F_2 - F_4)\) be recovered from the first group. From the second group, we recover \((2F_1 - F_3)\), \((2F_2 - F_4)\), \(F_5\), and \(F_6\), which together form \(\Nsf - \frac{3\Msf - 1}{2} + \msf = 4\) linear combinations, and from the third group, we recover \(F_3\), \(F_4\), \(F_5\), and \(F_6\), another \(4\) combinations. Hence, we can recover 
-$\Nsf - \frac{3\Msf - 1}{2} + 2\msf = 6$ linear combinations in total, matching the result in~\eqref{eq:M is odd}. The following outlines the specific procedure.}
+$\Nsf - \frac{3\Msf - 1}{2} + 2\msf = 6$ linear combinations in total, matching the result in~\eqref{eq:M is odd}. The following outlines the specific procedure}
 
 
 
@@ -688,13 +716,55 @@ server~$n$ compute
 \sv_n \bigl[ \fv_3 ; \fv_4 ; \fv_5 ; \fv_6 \bigr] 
 \bigl[ W_{1,1}; \ldots; W_{12,2} \bigr],
 \]
-where $\bigl[ \fv_3 ; \fv_4 ; \fv_5 ; \fv_6 \bigr]$ is given in 
-\eqref{eq:scheme 3 transmission of second class} from Appendix~\ref{sec:general scheme}.
+%where $\bigl[ \fv_3 ; \fv_4 ; \fv_5 ; \fv_6 \bigr]$ is given in 
+%\eqref{eq:scheme 3 transmission of second class}.
 
 
-
-We design ${\bf s}_n$ according to the following steps. We focus on the datasets in $[8:12]$ under cyclic assignment, extracting the corresponding columns from the matrix to form a submatrix ${\bf F}^{\prime}_1$, where ${\bf F}^{\prime}_1$ is shown in \eqref{eq:scheme 3 sub transmission} from Appendix \ref{sec:general scheme}.
 \iffalse
+\begin{figure*}
+\begin{equation} \label{eq:scheme 3 transmission of second class}
+\begin{aligned}
+\left[ {\fv}_3 ;  {\fv}_4 ;  {\fv}_5 ;  {\fv}_6 \right] = 
+ \left[
+\begin{array}{cccccccccccccccccccccccc}
+ 0 & 0 & 0 &  2 & 2 & 2 & 2 &  1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 2 & 1 & 1 & 1 & 1 & 1 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & * & * & * & * & * & 0 & 0 & 0 & 0 & 0 & 0 & 0 & * & * & * & * & * \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & * & * & * & * & * & 0 & 0 & 0 & 0 & 0 & 0 & 0 & * & * & * & * & *
+\end{array}
+ \right]
+\end{aligned}
+\end{equation}
+\end{figure*}
+
+\begin{figure*}
+\begin{equation} \label{eq:scheme 3 transmission of first class}
+\begin{aligned}
+\begin{bmatrix}
+ 2{\fv}_1 - {\fv}_3 \\ 
+ 2{\fv}_2 - {\fv}_4 \\ 
+ {\fv}_5 \\ 
+ {\fv}_6 
+\end{bmatrix} = 
+ \left[
+\begin{array}{cccccccccccccccccccccccc}
+ 2 & 2 & 2 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 4 & 2 & 4 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 1 & 3 & 4 & 2 \\
+ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 4 & 4 & -2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 3 & 1 & 1 & -5
+\end{array}
+ \right]
+\end{aligned}
+\end{equation}
+\rule{\textwidth}{0.2pt} % 创建分割线
+\end{figure*}
+\fi
+
+
+We design ${\bf s}_n$ according to the following steps. We focus on the datasets in $[8:12]$ under cyclic assignment, extracting the corresponding columns from the matrix to form a submatrix ${\bf F}^{\prime}_1$. 
+\iffalse
+, where %${\bf F}^{\prime}_1$ is shown in {\red \cite[Eq.??? in Appendix???]{GITHUB}}.
+
 \begin{equation} \label{eq:scheme 3 sub transmission}
 {\bf F}^{\prime}_1= \left[
 \begin{array}{cccccccccc}
@@ -706,8 +776,11 @@ We design ${\bf s}_n$ according to the following steps. We focus on the datasets
  \right].
 \end{equation}
 \fi
-Notice that server $n$ cannot compute 2 of the datasets in $[8:12]$. We extract the corresponding columns from the matrix to form a submatrix $\overline{{\bf F}^{\prime}_1}$, where $\overline{{\bf F}^{\prime}_1}$ is shown in \eqref{eq:scheme 3 sub sub transmission} from Appendix \ref{sec:general scheme}.
+
+Notice that server $n$ cannot compute 2 of the datasets in $[8:12]$. We extract the corresponding columns from the matrix to form a submatrix $\overline{{\bf F}^{\prime}_1}$.
+
 \iffalse
+, %where $\overline{{\bf F}^{\prime}_1}$ is shown in {\red \cite[Eq.??? in Appendix???]{GITHUB}}.
 where
 \begin{equation} \label{eq:scheme 3 sub sub transmission}
 \overline{{\bf F}^{\prime}_1}= \left[
@@ -720,18 +793,19 @@ where
  \right].
 \end{equation}
 \fi
+
+
 Our required ${\bf s}_n$ is the left null vector of $\overline{{\bf F}^{\prime}_1}$. 
 \iffalse
 If we choose the entries denoted by $*$ in ${\bf F}^{\prime}_1$ to be uniformly i.i.d. in $\mathbb{F}_q$ as in \cite{wan2022secure}, then $\overline{{\bf F}^{\prime}_1}$ will be full rank with high probability, meaning there will be no non-zero left null vector. Therefore, we employ the interference alignment strategy mentioned in \cite{limit} to construct $\overline{{\bf F}^{\prime}_1}$.
 \fi
-
 There should be a linear combination of the columns in $\overline{{\bf F}^{\prime}_1}$ leading to one rank deficiency, with the form
 \begin{align}
  {\bf F}'_1 \ev_n^{\text{\rm T}} = {\bf 0}_{4 \times 1},
  \label{eq: linear reduction equation}
 \end{align}
 for the first row of $\overline{{\bf F}^{\prime}_1}$, since $\left[ {\begin{array}{cc} 1 & 1 \\ \end{array}} \right] [1, -1]^{\text{\rm T}} = {\bf 0}_{1 \times 1}$, the corresponding elements in $\ev_n$ should be a multiple of $(1, -1)$, and we choose a random multiple. Similarly, the same applies to the second row of $\overline{{\bf F}^{\prime}_1}$. Repeating the above steps, we obtain
-\iffalse: 
+\iffalse
 \[
 \ev_1 = (0, 0, 0, 1, -1, 0, 0, 0, -1, 1),
 \]
@@ -747,30 +821,47 @@ for the first row of $\overline{{\bf F}^{\prime}_1}$, since $\left[ {\begin{arra
 \[
 \ev_5 = (0, 0, -1, 1, 0, 0, 0, 2, -2, 0).
 \]
-These vectors form \fi
+These vectors form 
+\fi
 the matrix ${\bf E}$, where
 \begin{align}
-{\bf E} &= 
-\left[ \ev_1 ;  \ev_2 ;  \ev_3 ;  \ev_4 ; \ev_5  \right] .
+{\bf E} = 
+\scalebox{0.8}{$
+\begin{bmatrix}
+\ev_1\\
+\vdots \\
+\ev_5
+\end{bmatrix} =  
+\begin{bmatrix}
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & -1 & 1 \\
+2 & 0 & 0 & 0 & -2 & -1 & 0 & 0 & 0 & 1 \\
+1 & -1 & 0 & 0 & 0 & 2 & -2 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & 0 & 0 & 1 & -1 & 0 & 0 \\
+0 & 0 & -1 & 1 & 0 & 0 & 0 & 2 & -2 & 0 \\
+\end{bmatrix}
+$}
 \label{eq:E for example}
 \end{align}
-The vector \(\ev_n\) is presented in Appendix~\ref{sec:general scheme}.
+
+%The vector \(\ev_n\) is presented in {\red \cite[Appendix ???]{GITHUB}. }
+%Appendix~\ref{sec:general scheme}.
 
 By \eqref{eq: linear reduction equation} and \eqref{eq:E for example}, we have
 \begin{align}
 {\bf F}'_1 {\bf E}^{\text{\rm T}} = \mathbf{0}_{4\times 5}, 
 \label{eq:equations for example}
 \end{align}
-
 where ${\bf E}^{\text{\rm T}}$ is \(10 \times 5\) and full rank. Thus, its left null space contains \(5\) linearly independent vectors, spanning the rows of ${\bf F}'_1$. The first two rows lie in the null space of ${\bf E}^{\text{\rm T}}$, and any two vectors from the remaining three null space vectors complete ${\bf F}'_1$, given as:
 \[
 {\bf F}'_1 = 
+\scalebox{0.8}{$
 \begin{bmatrix}
 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
 2 & 4 & 2 & 4 & 2 & 2 & 1 & 3 & 4 & 2 \\
 2 & 2 & 4 & 4 & -2 & 3 & 3 & 1 & 1 & -5
-\end{bmatrix}.
+\end{bmatrix}
+$}.
 \]
 For \({\bf s}_n\), satisfying \({\bf s}_n \overline{{\bf F}'_1} = \mathbf{0}_{1 \times 4}\), the resulting matrix is:
 \[
@@ -780,13 +871,15 @@ For \({\bf s}_n\), satisfying \({\bf s}_n \overline{{\bf F}'_1} = \mathbf{0}_{1 
 \vdots \\
 {\bf s}_{5}
 \end{bmatrix} =  
+\scalebox{0.8}{$
 \begin{bmatrix}
  2 & 11/4 & -3/4 & 1/4 \\
  4 & 4 & -2 & 0 \\
  2 & 3 & 0 & -1 \\
  8 & 16/3 & -4/3 & -4/3 \\
  6 & 3/2 & 0 & -3/2 \\
-\end{bmatrix}.
+\end{bmatrix}
+$}.
 \]
 For \(n \in [8, 12]\), server~\(n\) computes 
 \[
@@ -795,9 +888,10 @@ X_n = {\bf s}_n \bigl[F_3; F_4; F_5; F_6\bigr].
 
 Next, servers in \([3{:}7]\), excluding datasets from \([4{:}7]\), ensure that responses from any \(4\) servers recover \((2F_1 - F_3)\), \((2F_2 - F_4)\), \(F_5\), and \(F_6\). For \(n \in [3, 7]\), server~\(n\) computes
 \[
-X_n = {\bf s}_n \bigl[2{\fv}_1 - {\fv}_3; 2{\fv}_2 - {\fv}_4; {\fv}_5; {\fv}_6\bigr]\bigl[W_{1,1}; \ldots; W_{12,2}\bigr],
+X_n = {\bf s}_n \bigl[2{\fv}_1 - {\fv}_3; 2{\fv}_2 - {\fv}_4; {\fv}_5; {\fv}_6\bigr]\bigl[W_{1,1}; \ldots; W_{12,2}\bigr].
 \]
-where \(\bigl[2{\fv}_1 - {\fv}_3; 2{\fv}_2 - {\fv}_4; {\fv}_5; {\fv}_6\bigr]\) is shown in \eqref{eq:scheme 3 transmission of first class} in Appendix~\ref{sec:general scheme}.
+%where \(\bigl[2{\fv}_1 - {\fv}_3; 2{\fv}_2 - {\fv}_4; {\fv}_5; {\fv}_6\bigr]\) is shown in %{\red \cite[Eq. ??? in Appendix ???]{GITHUB}. }
+%\eqref{eq:scheme 3 transmission of first class}. %in Appendix~\ref{sec:general scheme}.
 
 For datasets in \([8{:}12]\), cyclic assignment forms \({\bf F}'_2\), and it is evident that \({\bf F}'_2 = {\bf F}'_1\). Since datasets missing from server~\(n \in [3{:}7]\) are included in those missing from \(n+5\), we have \({\bf S}' = {\bf S}\). Thus, server~\(n\) computes
 \[
@@ -805,9 +899,16 @@ X_n = {\bf s}_n \bigl[2F_1 - F_3; 2F_2 - F_4; F_5; F_6\bigr].
 \]
  
 
-Due to page limitations, we skip the proof of decodability. For more details, please refer to Appendix~\ref{sec:general scheme}.
 
-In conclusion, under the condition $\msf = 2$, the number of totally transmitted linearly independent combinations is $h(12,7) = 12 - 10 + 4 = 6$, which coincides with~\eqref{eq:M is odd}.
+In conclusion, under the condition $\msf = 2$, the number of totally transmitted linearly independent combinations is $h(12,7) = 12 - 10 + 4 = 6$, which coincides with~\eqref{eq:M is odd}. Moreover, our calculations show that if
+\[
+\msf(\Nsf - \Msf - 1) \;\leq\; \bigl[(\Nsf - \Msf)(\msf - 1) + 1\bigr]\Bigl(\Nsf - \tfrac{3}{2}\Msf - \tfrac{1}{2}\Bigr),
+\]
+transmitter Interference Alignment~\cite{2008Interference_Alignment, MIMO_interference_channel, huang2023ISITversion} is required.
+  
+
+
+
 \iffalse
 {\it Decoding phase.}
 
@@ -837,7 +938,7 @@ We assign \(D_1, \ldots, D_{\Nsf - \Msf}\) to each server in \([\Msf]\), and \(D
 
 \iffalse
 \section{Conclusion}
-We focus on the secure distributed linearly separable computation problem, which prevents the user from accessing any information about the dataset besides the task function. We first research the minimum key size under general computation cost while achieving optimal communication cost. For this purpose, we propose a new computing scheme with a novel assignment strategy. The computing scheme can cover the optimality results of the computing scheme with fractional repetition assignment. The new computing scheme is also applicable to the case of minimal computation cost in \cite{wan2022secure}.
+We focus on the secure distributed linearly separable computation problem, which prevents the user from accessing any information about the dataset besides the task function. We first research the minimum source key size under general computation cost while achieving optimal communication cost. For this purpose, we propose a new computing scheme with a novel assignment strategy. The computing scheme can cover the optimality results of the computing scheme with fractional repetition assignment. The new computing scheme is also applicable to the case of minimal computation cost in \cite{wan2022secure}.
 \fi
 
 \clearpage
@@ -851,7 +952,7 @@ We focus on the secure distributed linearly separable computation problem, which
 
 \section{Proof of Theorem~\ref{thm:bound of η}}
 \label{sec:bound proof}
-By the security constraint in~\eqref{eq:security}, the user can only obtain $W_1+\cdots+W_{\Ksf}$ without accessing any additional information about the messages, even after receiving answers from all servers. Let $X_{\Sc}=\{X_n: n \in \Sc\}$. From~\eqref{eq:security}, we derive:
+By the security constraint in \eqref{eq:security}, the user can only obtain $W_1+\cdots+W_{\Ksf}$ without accessing any additional information about the messages, even after receiving answers from all servers. Let $X_{\Sc}=\{X_n: n \in \Sc\}$. From~\eqref{eq:security}, we derive:
 \begin{subequations}
 \begin{align}
 0 &= I(W_1, \ldots, W_{\Ksf}; X_{[\Nsf]} | W_1+W_2+\cdots+W_{\Ksf}) \\
@@ -927,7 +1028,7 @@ We first consider the dataset assignment for the servers in $[\Msf]$, which is s
 \cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7}\cline{8-8}\cline{9-9}
 && &D_1 & \cdots & D_1 & D_1 & \cdots & D_1 \\
 && &\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\ 
-&& \mbox{data}&D_{\ysf} & \cdots & D_{\ysf} & D_{\ysf} & \cdots & D_{\ysf} \\
+&& \mbox{dataset}&D_{\ysf} & \cdots & D_{\ysf} & D_{\ysf} & \cdots & D_{\ysf} \\
 && &D_{\ysf+1} & \cdots & D_{\ysf+1} & D_{\Msf+1} & \cdots & D_{\Msf+1} \\ 
 && &\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\
 && &D_{\Msf} & \cdots & D_{\Msf}&  D_{\Nsf} & \cdots & D_{\Nsf}\\  
@@ -959,6 +1060,7 @@ We group the $\msf$ linear combinations $(F_1 - F_{\msf+1}), \ldots, (F_{\msf} -
 
 We then focus on the servers in $[\Msf+1: \Nsf]$. For each dataset pair $\Pc_i = \{\ysf+i, \Msf+i\}$ where $i \in [\Nsf - \Msf]$, we define $P_i = 2W_{\ysf+i} + W_{\Msf+i}$. Therefore, we can express $F_{\msf+1}$ to $F_{2\msf}$ as $P_{1,1} + \cdots + P_{\Nsf-\Msf,1}, \ldots, P_{1,\msf} + \cdots + P_{\Nsf-\Msf,\msf}$.
 Thus, we can apply the computing phase of the proposed scheme to the $\left(\Nsf - \Msf, \frac{\Msf}{2}\right)$ non-secure problem.
+\\
 
 {\it Decoding phase.}
 
@@ -968,10 +1070,11 @@ First, we consider the case where at least $\Nsf - 1.5\Msf + \msf$ responses com
 We then consider the second case, where the servers in $[\Msf+1: \Nsf]$ respond with $\Nsf - 1.5\Msf + \msf - \xsf$ responses, providing at least $h(\Nsf - \Msf, \Msf/2) - \xsf$ linearly independent combinations. Meanwhile, the servers in $[\Msf]$ will have $\Msf/2 + \xsf$ responses, contributing at least $\msf +\xsf$ linearly independent combinations. In total, these responses provide $h(\Nsf - \Msf, \Msf/2)$ linearly independent combinations, which are sufficient to recover $F_1$ to $F_{2\msf}$.
 
 The number of linearly independent combinations transmitted by servers in $[\Msf+1:\Nsf]$ is $h\left(\Nsf-\Msf, \frac{\Msf}{2}\right)$, which spans the space containing $F_{\msf+1}$ to $F_{2\msf}$. Additionally, servers in $[\Msf]$ transmit $2\msf$ linearly independent combinations, also spanning the space of $F_{\msf+1}$ to $F_{2\msf}$. Therefore, the total number of transmitted linearly independent combinations is $h(\Nsf,\Msf)= 2\msf + h\left(\Nsf-\Msf, \frac{\Msf}{2}\right) - \msf = h\left(\Nsf-\Msf, \frac{\Msf}{2}\right) + \msf$, which matches~\eqref{eq:M is even}.
+\\
 
 \subsection{general scheme 3}
 \label{general scheme 3}
-
+\iffalse
 We first present the matrix omitted in Section~\ref{sub:M is odd}, given in 
 ~\ref{eq:scheme 3 sub transmission} and~\ref{eq:scheme 3 sub sub transmission}. 
 At the top of the next page,~\ref{eq:scheme 3 transmission of second class} 
@@ -1053,7 +1156,7 @@ and~\ref{eq:scheme 3 transmission of first class} are shown.
 \end{equation}
 
 \end{figure*}
-
+\fi
 We now consider the $(\Nsf, \Msf)$ non-secure problem, where $1.5 \Msf \leq \Nsf < 2\Msf$, $\Msf$ is odd, and $\Msf \geq 2\msf + 1$. Our goal is to construct a scheme (Scheme~3) to prove~\eqref{eq:M is odd}.
 We also define that $\Nsf=2\Msf-\ysf$. 
 
@@ -1066,7 +1169,7 @@ The assignment is shown at the top of the next page.
 \cline{3-3}\cline{4-4}\cline{5-5}\cline{6-6}\cline{7-7}\cline{8-8}\cline{9-9}\cline{10-10}\cline{11-11}\cline{12-12}\cline{13-13}\cline{14-14}
 && &D_1& \cdots       &   D_1 &  D_{1} &  D_{1} & \cdots &  D_{1}   &  D_{\frac{\Msf-1}{2}+1}   &  D_{\frac{\Msf-1}{2}+1} &  \cdots  &  D_{\frac{\Msf-1}{2}+1}  \\
 && &\cdots & \cdots & \cdots &  \cdots & \cdots  & \cdots   & \cdots  & \cdots & \cdots & \cdots & \cdots  \\ 
-&& \mbox{\small data}&D_{\frac{\Msf-1}{2}} &    \cdots    & D_{\frac{\Msf-1}{2}}  & D_{\frac{\Msf-1}{2}} & D_{\frac{\Msf-1}{2}}    & \cdots  & D_{\frac{\Msf-1}{2}} &   D_{\Msf}  &   D_{\Msf}  &  \cdots  &  D_{\Msf}  \\
+&& \mbox{\small dataset}&D_{\frac{\Msf-1}{2}} &    \cdots    & D_{\frac{\Msf-1}{2}}  & D_{\frac{\Msf-1}{2}} & D_{\frac{\Msf-1}{2}}    & \cdots  & D_{\frac{\Msf-1}{2}} &   D_{\Msf}  &   D_{\Msf}  &  \cdots  &  D_{\Msf}  \\
 && &D_{\frac{\Msf-1}{2}+1}&  \cdots  & D_{\frac{\Msf-1}{2}+1}  & D_{\Msf+1} & D_{\Msf+2} & \cdots & D_{\Nsf}& D_{\Msf+1}  &  D_{\Msf+2} &   \cdots  &  D_{\Nsf} \\ 
 && &\cdots &  \cdots       & \cdots & \cdots & \cdots   & \cdots & \cdots & \cdots & \cdots   & \cdots & \cdots \\
 && &D_{\Msf} &   \cdots  &  D_{\Msf} & D_{\frac{3\Msf+1}{2}} & D_{\frac{3\Msf+1}{2} +1}  & \cdots & D_{\frac{\Msf+1}{2}-1} &  D_{\frac{3\Msf-1}{2}}  &  D_{\frac{3\Msf-1}{2}+1}   &  \cdots  &  D_{\frac{\Msf-1}{2}-1}\\  
@@ -1081,7 +1184,8 @@ In this assignment, we split the $\Nsf$ datasets into three sections. The first 
 We design the computing phase so that the total number of linearly independent combinations computed by all servers is $\ \frac {\Msf + 1}{2} - \ysf + 2\msf$. We let each server send a linear combination of messages so that the user can recover ${\bf F}' \ [W_{1,1}; \ldots; W_{\Nsf,\msf}]$ from the responses of any $N_{\rm r} = \Nsf - \Msf +\msf$ servers, where \( {\bf F}' \) is shown at the top of the next page in \eqref{eq:general form of F'}.
 \begin{figure*}
 \begin{equation}
- {\bf F}' = \begin{bmatrix}
+\scalebox{0.8}{$
+{\bf F}' = \begin{bmatrix}
  \fv_1 \\
  \vdots \\
  \fv_{\frac{\Msf+1}{2}-\ysf+2\msf} 
@@ -1096,9 +1200,10 @@ We design the computing phase so that the total number of linearly independent c
  ({\bf V}_{1})_{ (\frac{\Msf + 1}{2} - \ysf) \times \Nsf}  &  ({\bf V}_{2})_{ (\frac{\Msf + 1}{2} - \ysf) \times \Nsf}  &   \cdots   &   ({\bf V}_{\msf})_{ (\frac{\Msf + 1}{2} - \ysf) \times \Nsf} 
  \end{array}
 \right]_{(\frac{\Msf + 1}{2} - \ysf + 2\msf) \times \Nsf\msf}.
+$}
 \label{eq:general form of F'}
 \end{equation}
-\rule{\textwidth}{0.2pt} % 创建分割线
+
 \end{figure*}
 
 We design the demand matrix 
@@ -1166,6 +1271,7 @@ Hence, in order to guarantee that in~\eqref{eq:transmission of second class} the
 By extracting the corresponding rows and columns from the matrix \( {\bf F}' \), we obtain \( {\bf F}_{\bf s} \), as shown at the top of the next page in \eqref{eq:general form of F_s},
 \begin{figure*}
 \begin{equation}
+\scalebox{0.8}{$
  {\bf F}_{\bf s} = 
 \left[
 \begin{array}{c:c:c:c}
@@ -1176,6 +1282,7 @@ By extracting the corresponding rows and columns from the matrix \( {\bf F}' \),
  ({\bf V}'_{1})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)}  &  ({\bf V}'_{2})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)}  &   \cdots   &   ({\bf V}'_{\msf})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)} 
  \end{array}
 \right]_{(\frac{\Msf + 1}{2} - \ysf + \msf) \times \msf(\Nsf-\Msf)}
+$}
 \label{eq:general form of F_s}
 \end{equation}
 
@@ -1198,6 +1305,7 @@ Notice that $W_1,\ldots,W_{\frac{\Msf-1}{2}}$ can be computed by server $n$; and
 Hence, in order to guarantee that in~\eqref{eq:transmission of first class} the coefficients of the messages which server $n$ cannot compute are $0$, we only need to consider the messages in $W_{\Msf+1}, \ldots, W_{\Nsf}$,corresponding to the columns in ${\bf C}_3$ in the matrix, with a total of $\msf (\Nsf - \Msf)$ columns.By extracting the corresponding rows and columns from the matrix \( {\bf F}' \), we obtain \( {\bf F}'_{\bf s} \), as shown at the top of the next page in \eqref{eq:general form of F'_s}.
 \begin{figure*}
 \begin{equation}
+\scalebox{0.8}{$
  {\bf F}'_{\bf s} = 
 \left[
 \begin{array}{c:c:c:c}
@@ -1208,9 +1316,10 @@ Hence, in order to guarantee that in~\eqref{eq:transmission of first class} the 
  ({\bf V}'_{1})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)}  &  ({\bf V}'_{2})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)}  &   \cdots   &   ({\bf V}'_{\msf})_{ (\frac{\Msf + 1}{2} - \ysf) \times (\Nsf-\Msf)} 
  \end{array}
 \right]_{(\frac{\Msf + 1}{2} - \ysf + \msf) \times \msf(\Nsf-\Msf)}.
+$}
 \label{eq:general form of F'_s}
 \end{equation}
-\rule{\textwidth}{0.2pt} % 创建分割线
+
 \end{figure*}
 It is easy to observe that ${\bf F}'_{\bf s} = {\bf F}_{\bf s}$.Notice that the datasets in $[\Msf+1, \Nsf]$ are also cyclically assigned to the servers in $[\ysf+1 : \Msf]$. For $n \in [\ysf+1 : \Msf]$, server $n$ cannot compute ${\Nsf - \frac{3\Msf + 1}{2}}$ datasets from $[\Msf+1, \Nsf]$, and these datasets are also not computable by server $n + \Msf - \ysf$. Since ${\bf F}'_{\bf s} = {\bf F}_{\bf s}$, we can  set ${\bf s}_n = {\bf s}_{n + \Msf - \ysf}$.
 
@@ -1262,7 +1371,7 @@ Returning to the \( (\Nsf, \Msf) \) non-secure problem, we set up the server tra
 \right]_{h(\Msf, 2\Msf - \Nsf) \times \msf \Nsf}.$}
 \label{eq:general form of F}
 \end{equation}
-\rule{\textwidth}{0.2pt} % 创建分割线
+
 \end{figure*}
 Each row in the submatrix ${\bf A}$ contains identical random numbers. For each $i \in [\msf]$, ${\bf V}_i$ shares elements with the corresponding elements in matrix ${\bf F}$, allowing matrix ${\bf F}$ to be viewed as a submatrix extracted from ${\bf F}'$ based on the columns in each ${\bf V}_i$.
 
