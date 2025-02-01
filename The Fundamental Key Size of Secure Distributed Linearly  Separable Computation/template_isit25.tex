@@ -1388,6 +1388,18 @@ For each server $n \in [\Msf+1 : \Nsf]$, it cannot compute $W_1, \ldots, W_{\Nsf
 When $0 < |\Ac_2| \leq \Nsf - \Msf$ and $\Ac_1$ alone does not suffice, the user receives at least $\msf$ independent responses from $\Ac_1$. Let the linearly independent combinations from $\Ac_1$ be denoted by $\lambda_1$. In addition to the responses from $\Ac_1$, the user will receive responses from at least $h(\Msf, 2\Msf - \Nsf) - \lambda_1$ servers in $[\Msf+1 : \Nsf]$. Since each server sends an independent combination of $h(\Msf, 2\Msf - \Nsf) - \msf$, any $h(\Msf, 2\Msf - \Nsf) - \lambda_1$ responses in $[\Msf+1 : \Nsf]$ are linearly independent with high probability. Combining with $\lambda_1$, this totals $h(\Msf, 2\Msf - \Nsf)$ combinations, allowing the user to recover ${\bf F} \begin{bmatrix} W_{1,1}; \ldots; W_{\Nsf, \msf} \end{bmatrix}$.
 
 In summary, $h(\Nsf, \Msf) = h(\Msf, 2\Msf - \Nsf)$, consistent with~\eqref{eq:less than 1.5M}.
+
+
+
+\section{The applicable range of Interference Alignment in general scheme 3
+}
+
+Recall that in \eqref{eq:general form of F_s}, ${\bf F}_{\bf s}$ is a matrix of dimensions $\left( \frac{\Msf + 1}{2} - \ysf + \msf \right) \times \msf(\Nsf - \Msf)$. We use $\Nsf-\Msf$ workers to compute this required matrix, where each worker can compute $\frac{\Msf - 1}{2}$ data sets. If we proceed with interference alignment individually for each worker as in \label{ex:scheme 3 example}, we should generate $(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right)$ linearly independent linear equations for each worker. Thus, in total, we generate $(\Nsf-\Msf)(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right)$ linear equations. The resulting matrix ${\bf E}$ has dimensions $ \left[ (\Nsf-\Msf)(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right) \right] \times \msf(\Nsf-\Msf)$. By construction, these $(\Nsf-\Msf)(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right)$ linear equations are linearly independent, and thus, ${\bf E}$ is of full rank. The left null space of ${\bf E}^{\text{\rm T}}$ contains only $\msf(\Nsf-\Msf) - (\Nsf-\Msf)(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right)$ linearly independent vectors. However, the number of rows of ${\bf F}_{\bf s}$ is $\left( \frac{\Msf + 1}{2} - \ysf + \msf \right) = \Nsf - \frac{3\Msf}{2} + \frac{1}{2} + \msf$. Therefore, when 
+$$ \msf(\Nsf-\Msf) - (\Nsf-\Msf)(\msf-1)\left(\Nsf - \frac{3\Msf}{2} - \frac{1}{2}\right) < \Nsf - \frac{3\Msf}{2} + \frac{1}{2} + \msf, $$
+i.e.,
+$$ \msf(\Nsf - \Msf - 1) \leq \left[ (\Nsf - \Msf)(\msf - 1) + 1 \right] \left( \Nsf - \frac{3}{2} \Msf - \frac{1}{2} \right), $$
+we need to use the interference alignment computing scheme, which jointly aligns the interferences across different workers.
+
 %%%%%%
 %% To balance the columns at the last page of the paper use this
 %% command:
